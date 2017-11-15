@@ -6,23 +6,19 @@ app.run(function(FIREBASE_CONFIG){
 
 app.config(function($routeProvider){
 	$routeProvider
-	.when("/auth", {
-		templateUrl: 'partials/auth.html',
-		controller: 'AuthCtrl'
-	})
-	.when("/favorites", {
-		templateUrl: 'partials/favorites.html',
-		controller: 'FavoritesCtrl'
-	})
 	.when("/login", {
 		templateUrl: 'partials/login.html',
 		controller: 'LoginCtrl'
 	})
-	.when("/new", {
+	.when("/contacts/favorites", {
+		templateUrl: 'partials/favorites.html',
+		controller: 'FavoritesCtrl'
+	})
+	.when("/contacts/new", {
 		templateUrl: 'partials/new.html',
 		controller: 'NewCtrl'
 	})
-	.when("/view", {
+	.when("/contacts/view", {
 		templateUrl: 'partials/view.html',
 		controller: 'ViewCtrl'
 	})
