@@ -3,7 +3,7 @@
 		"contact0": {
 			"first_name": "Aaron",
 			"last_name": "Apple",
-			"phone_number": "615111111",
+			"phone_number": 615111111,
             "email": "aaronapple@gmail.com",
             "company": "AAA Apples And More",
 			"twitter": "@AApple",
@@ -13,7 +13,7 @@
 		"contact1": {
 			"first_name": "Byron",
 			"last_name": "Buttz",
-			"phone_number": "3172222222",
+			"phone_number": 3172222222,
             "email": "bbuttz@icloud.com",
             "company": "Big Byron Buttz",
 			"twitter": "@BButtz",
@@ -23,7 +23,7 @@
 		"contact2": {
 			"first_name": "Crusty",
 			"last_name": "Carl",
-			"phone_number": "2603333333",
+			"phone_number": 2603333333,
             "email": "crustycarl@gmail.com",
             "company": "Crusty Carls Cakes",
 			"twitter": "@CCarl",
@@ -33,7 +33,7 @@
 		"contact3": {
 			"first_name": "Dustin",
 			"last_name": "Dawg",
-			"phone_number": "9014444444",
+			"phone_number": 9014444444,
             "email": "ddawg@icloud.com",
             "company": "Dustin Dawgz",
 			"twitter": "@DDawg",
@@ -43,7 +43,7 @@
 		"contact4": {
 			"first_name": "Eagle",
 			"last_name": "Earl",
-			"phone_number": "9315555555",
+			"phone_number": 9315555555,
             "email": "eeagle@gmail.com",
             "company": "Eagle Earl Eggs",
 			"twitter": "@EEarl",
@@ -53,7 +53,7 @@
 		"contact5": {
 			"first_name": "Fat",
 			"last_name": "Fransisco",
-			"phone_number": "7656666666",
+			"phone_number": 7656666666,
             "email": "ffransisco@icloud.com",
             "company": "Fat Frankies Fritters",
 			"twitter": "@FFransisco",
@@ -63,7 +63,7 @@
 		"contact6": {
 			"first_name": "Gina",
 			"last_name": "Greasy",
-			"phone_number": "3137777777",
+			"phone_number": 3137777777,
             "email": "ggreasy@gmail.com",
             "company": "Greasy Ginas Gumballs",
 			"twitter": "@GGreasy",
@@ -73,7 +73,7 @@
 		"contact7": {
 			"first_name": "Hanna",
 			"last_name": "Hawk",
-			"phone_number": "8128888888",
+			"phone_number": 8128888888,
             "email": "hhawk@icloud.com",
             "company": "Hot Hairy Hanna",
 			"twitter": "@HHawk",
@@ -83,7 +83,7 @@
 		"contact8": {
 			"first_name": "Iron",
 			"last_name": "Ike",
-			"phone_number": "4239999999",
+			"phone_number": 4239999999,
             "email": "iike@gmail.com",
             "company": "Iron Ike Injections",
 			"twitter": "@IIKe",
@@ -93,7 +93,7 @@
 		"contact9": {
 			"first_name": "Jake",
 			"last_name": "Jetson",
-			"phone_number": "8430000000",
+			"phone_number": 8430000000,
             "email": "jjetson@icloud.com",
             "company": "Jake Jetson Jetpacks",
 			"twitter": "@JJetson",
