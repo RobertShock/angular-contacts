@@ -22,5 +22,5 @@ app.config(function($routeProvider){
 		templateUrl: 'partials/view.html',
 		controller: 'ViewCtrl'
 	})
-	.otherwise('/auth');
+	.otherwise('/login');
 });
