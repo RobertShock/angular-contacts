@@ -1,10 +1,10 @@
 'use strict';
 
-app.controller("NavCtrl", function($location, $rootScope, $scope, $window, LoginService){
+app.controller("NavCtrl", function($location, $rootScope, $scope, $window, AuthService){
 	$scope.logoutUser = () => {
 		delete $rootScope.uid;
 		$window.localStorage.clear();
-		LoginService.logout();
-		$location.path('/login');
+		AuthService.logout();
+		$location.path('/auth');
 	};
 });
