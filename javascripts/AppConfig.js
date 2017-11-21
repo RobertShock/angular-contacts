@@ -17,19 +17,19 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
 	var appTo;
 	
     	if (currRoute.originalPath) {
-      	appTo = currRoute.originalPath.indexOf('/auth') !== -1;
+      	appTo = currRoute.originalPath.indexOf('/login') !== -1;
 		}
 		
     	if (!appTo && !logged) {
       	event.preventDefault();
-      	$location.path('/auth');
+      	$location.path('/login');
     	}
   	});
 });
 
 app.config(function($routeProvider){
 	$routeProvider
-	.when("/auth", {
+	.when("/login", {
 		templateUrl: 'partials/auth.html',
 		controller: 'AuthCtrl'
 	})
@@ -48,5 +48,5 @@ app.config(function($routeProvider){
 		controller: 'ViewCtrl',
 		resolve: {isAuth}
 	})
-	.otherwise('/auth');
+	.otherwise('/login');
 });

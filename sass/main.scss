@@ -1,3 +1,6 @@
 @import 'color';
 body {background-color: $lightgray;
 }
+[ng-click] {
+    cursor: pointer;
+}
