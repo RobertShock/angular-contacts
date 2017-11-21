@@ -20,6 +20,7 @@ app.service("ContactService", function($http, $q, FIREBASE_CONFIG) {
     };
 
     const addNewContact = (newContact) => {
+        console.log("newContact", newContact);
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify(newContact));
     };
 
