@@ -1,18 +1,18 @@
 'use strict';
 
-let isAuth = (AuthService) => new Promise ((resolve, reject) => {
-	if(AuthService.isAuthenticated()){
+let isAuth = (LoginService) => new Promise ((resolve, reject) => {
+	if(LoginService.isAuthenticated()){
 	  resolve();
 	} else {
 	  reject();
 	}
 });
 
-app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
+app.run(function($location, $rootScope, FIREBASE_CONFIG, LoginService){
 	firebase.initializeApp(FIREBASE_CONFIG);
 	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 
-	var logged = AuthService.isAuthenticated();
+	var logged = LoginService.isAuthenticated();
 	
 	var appTo;
 	
@@ -30,8 +30,8 @@ app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService){
 app.config(function($routeProvider){
 	$routeProvider
 	.when("/login", {
-		templateUrl: 'partials/auth.html',
-		controller: 'AuthCtrl'
+		templateUrl: 'partials/login.html',
+		controller: 'LoginCtrl'
 	})
 	.when("/contacts/favorites", {
 		templateUrl: 'partials/favorites.html',

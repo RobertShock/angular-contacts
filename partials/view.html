@@ -5,7 +5,7 @@
 	<div id="contacts"></div>
 		<div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
 			<div class="thumbnail">
-				<button class="btn btn-danger, delete" ng-click="deleteContact(contact.id)">X</button>
+				<button class="btn btn-danger delete" ng-click="deleteContact(contact.id)">X</button>
 				<div class="caption">
 					<h3>{{contact.first_name}} {{contact.last_name}}</h3>
 					<p>{{contact.phone_number}}</p>

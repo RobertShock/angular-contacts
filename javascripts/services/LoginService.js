@@ -1,6 +1,6 @@
 'use strict';
 
-app.service("AuthService", function(){
+app.service("LoginService", function(){
 	const authenticateGoogle = () => {
     	const provider = new firebase.auth.GoogleAuthProvider();
     	return firebase.auth().signInWithPopup(provider);
