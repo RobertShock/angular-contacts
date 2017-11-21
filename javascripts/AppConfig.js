@@ -1,7 +1,30 @@
 'use strict';
 
-app.run(function(FIREBASE_CONFIG){
+let isAuth = (LoginService) => new Promise ((resolve, reject) => {
+	if(LoginService.isAuthenticated()){
+	  resolve();
+	} else {
+	  reject();
+	}
+});
+
+app.run(function($location, $rootScope, FIREBASE_CONFIG, LoginService){
 	firebase.initializeApp(FIREBASE_CONFIG);
+	$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+
+	var logged = LoginService.isAuthenticated();
+	
+	var appTo;
+	
+    	if (currRoute.originalPath) {
+      	appTo = currRoute.originalPath.indexOf('/login') !== -1;
+		}
+		
+    	if (!appTo && !logged) {
+      	event.preventDefault();
+      	$location.path('/login');
+    	}
+  	});
 });
 
 app.config(function($routeProvider){
@@ -12,15 +35,18 @@ app.config(function($routeProvider){
 	})
 	.when("/contacts/favorites", {
 		templateUrl: 'partials/favorites.html',
-		controller: 'FavoritesCtrl'
+		controller: 'FavoritesCtrl',
+		resolve: {isAuth}
 	})
 	.when("/contacts/new", {
 		templateUrl: 'partials/new.html',
-		controller: 'NewCtrl'
+		controller: 'NewCtrl',
+		resolve: {isAuth}
 	})
 	.when("/contacts/view", {
 		templateUrl: 'partials/view.html',
-		controller: 'ViewCtrl'
+		controller: 'ViewCtrl',
+		resolve: {isAuth}
 	})
 	.otherwise('/login');
 });
