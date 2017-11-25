@@ -1,8 +1,26 @@
 'use strict';
 
-app.service("ContactService", function($http, $q, FIREBASE_CONFIG) {
+app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
     const getContacts = (userUid) => {
         console.log("userUid", userUid);
+        let myContacts = [];
+        return $q((resolve, reject) => {
+            $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
+                let contacts = results.data;
+                if (contacts != null) {
+                    Object.keys(contacts).forEach((key) => {
+                        contacts[key].id = key;
+                        myContacts.push(contacts[key]);
+                    });
+                }
+                resolve(myContacts);
+            }).catch((err) => {
+                reject(err);
+            });
+        });
+    };
+
+    const getFavoriteContacts = (userUid) => {
         let myContacts = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {

@@ -1,4 +1,29 @@
 <div class="text-center" id="favorites">
-	<h1>Favorites</h1>
-	{{controller}}
+    <h1>My Favorite Contacts</h1>
+
+    <div id="myFavorites">
+        <div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
+            <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>
+            <input type="text" class="form-control" placeholder="Search Favorites" ng-model="searchText">
+        </div>
+        <div ng-repeat="contact in contacts | filter: searchText" class="col-sm-6 col-md-4 contact">
+            <div class="thumbnail">
+                    <button class="btn btn-danger delete" ng-click="deleteContact(favorite.id)"><i class="fa fa-trash-o"></i></button>
+                    <button class="btn btn-default faborite-btn" ng-click="toggleFavorite(favorite)"><i ng-class="{'fa fa-star-o' : !contact.isFavorite, 'fa fa-star' : contact.isFavorite}"></i></button>
+                    <button class="btn btn-edefault edit-btn" ng-click="editContact(favorite.id)"><i class="fa fa-pencil"></i></button>
+                    <button class="btn btn-default detail-btn" ng-click="contactDetail(favorite.id)"><i class="fa fa-search"></i></button>
+				<div class="caption">
+					<h3>{{contact.first_name}} {{contact.last_name}}</h3>
+					<p>{{contact.phone_number}}</p>
+					<p>{{contact.email}}</p>
+					<p>{{contact.company}}</p>
+					<p>{{contact.twitter}}</p>
+                    <p>{{contact.facebook_page}}</p>
+                    <p> Rating:
+                        <star-rating-comp rating="contact.favorite" num-of-stars="5" on-click="starChange($event, contact)"></star-rating-comp>
+                    </p>  
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
