@@ -1,10 +1,9 @@
 'use strict';
 
-app.controller("NewCtrl", function($http, $location, $routeParams, $rootScope, $scope, ContactService) { 
-	$scope.newContact = {};
+app.controller("NewCtrl", function($location, $rootScope, $scope, ContactService) { 
 
-$scope.submitForm = (contact) => {
-	let updatedContact = {};
+	$scope.submitForm = (contact) => {
+		contact.uid = $rootScope.uid;
 
 	//  updatedContact = {
 	//     "first_name": $scope.newContact.firstname,
@@ -18,10 +17,10 @@ $scope.submitForm = (contact) => {
 	//     "isFavorite": contact.isFavorite
 	// };
 
-	ContactService.updateContact(contact, $routeParams.id).then(() => {
-		$location.path("/contacts/view");
-	}).catch((error) => {
-		console.log("error in submitForm", error);
-	});
-};
+		ContactService.postNewContact(contact).then((results) => {
+			$location.path("/contacts/view");
+		}).catch((error) => {
+			console.log("error in postNewContact", error);
+		});
+	};
 });

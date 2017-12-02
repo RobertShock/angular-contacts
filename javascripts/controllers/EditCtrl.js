@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("EditCtrl", function($location, $rootScope, $routeParams, $scope, ContactService) {
+app.controller('EditCtrl', function($location, $rootScope, $routeParams, $scope, ContactService) {
 
     $scope.contact = {};
     
@@ -8,18 +8,16 @@ app.controller("EditCtrl", function($location, $rootScope, $routeParams, $scope,
         ContactService.getSingleContact($routeParams.id).then((results) => {
             $scope.contact = results.data;
         }).catch((error) => {
-            console.log("error in getSingleContacts");
+            console.log('error in getSingleContact', err);
         });
     };
 
     $scope.submitForm = (contact) => {
-        let updatedContact = {};
-
-
+        contact.uid = $rootScope.uid;
         ContactService.updateContact(contact, $routeParams.id).then(() => {
             $location.path("/contacts/view");
         }).catch((error) => {
-            console.log("error in submitForm", error);
+            console.log('error in submitForm', err);
         });
     };
 

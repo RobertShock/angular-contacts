@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("ContactDetailCtrl", function($location, $routeParams, $scope, ContactService){
+app.controller('ContactDetailCtrl', function($location, $routeParams, $scope, ContactService){
 
 	$scope.contact = {};
 
@@ -8,25 +8,25 @@ app.controller("ContactDetailCtrl", function($location, $routeParams, $scope, Co
 		ContactService.getSingleContact($routeParams.id).then((results) => {
 			$scope.contact = results.data;
 		}).catch((err) => {
-			console.log("err in getSingleContact", err);
+			console.log('err in getSingleContact', err);
    		});	
 	};
 
 	$scope.deleteContact = ( contactId ) => {
-		ContactService.deleteContactInFb(contactId).then((results) => {
+		ContactService.deleteContact(contactId).then((results) => {
 			getContact();
 		}).catch((err) => {
-			console.log('error in deleteContactInFb:', err);
+			console.log('error in deleteContact', err);
 		});  
 	};
 
-    $scope.changeFav = (contact, contactId) => {
+    $scope.changeFavorite = (contact, contactId) => {
 		contact.favorite = contact.favorite ? false: true;
-		let favContact = ContactService.createContactObject (contact);
-		ContactService.updateContact(favContact, contactId).then(() => {
+		let favoriteContact = ContactService.createContactObj (contact);
+		ContactService.updateContact(favoriteContact, contactId).then(() => {
 			getContact();
 		}).catch((err) => {
-			console.log("error in favContact", err);
+			console.log('error in favoriteContact', err);
 		});
 	};
 	
@@ -39,7 +39,7 @@ app.controller("ContactDetailCtrl", function($location, $routeParams, $scope, Co
 	};
 	
 	$scope.goToNewContacts = () => {
-		$location.path(`"/contacts/new"`);
+		$location.path("/contacts/new");
 	};
 
 	getContact();

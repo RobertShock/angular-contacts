@@ -54,8 +54,8 @@ app.config(function($routeProvider){
 		resolve: {isAuth}
 	})
 	.when("/contacts/detail/:id", {
-		templateUrl: 'partials/contact-detail.html',
-		controller: 'DetailCtrl',
+		templateUrl: 'partials/contact_detail.html',
+		controller: 'ContactDetailCtrl',
 		resolve: {isAuth}
 	})
 	.otherwise('/login');

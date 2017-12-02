@@ -1,13 +1,12 @@
 'use strict';
 
-app.controller("ViewCtrl", function($location, $rootScope, $scope, ContactService){
-	$scope.contacts = [];
+app.controller("ViewCtrl", function($location, $rootScope, $scope, ContactService) {
 
 	const getContacts = () => {
 		ContactService.getContacts($rootScope.uid).then((results) =>{
 			$scope.contacts = results;
 		}).catch((err) =>{
-			console.log("error in getContacts", err);
+			console.log('error in getContacts', err);
 		});
 	};
 
@@ -17,19 +16,19 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, ContactServic
 		ContactService.deleteContact(contactId).then((result) => {
 			getContacts();
 		}).catch((err) =>{
-			console.log("error in deleteContact", err);
+			console.log('error in deleteContact', err);
 		});
 	};
 
 	getContacts();
 
-	$scope.changeFav = (contact, contactId) => {
+	$scope.switchFavorite = (contact, contactId) => {
 		contact.favorite = contact.favorite ? false: true;
-		let favContact = ContactService.createContactObject (contact);
-		ContactService.updateContact(favContact, contactId).then(() => {
+		let favoriteContact = ContactService.createContactObj (contact);
+		ContactService.updateContact(favoriteContact, contactId).then(() => {
 			getContacts();
 		}).catch((err) => {
-			console.log("error in favContact", err);
+			console.log('error in favoriteContact', err);
 		});
 	};
 	
@@ -42,7 +41,7 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, ContactServic
 	};
 	
 	$scope.goToNewContacts = () => {
-		$location.path(`"/contacts/new"`);
+		$location.path("/contacts/new");
 	};
 
 });

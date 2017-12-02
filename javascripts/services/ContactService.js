@@ -6,14 +6,14 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
         let contacts = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
-                let myContacts = results.data;                 
-                    Object.keys(myContacts).forEach((key) => {
-                        myContacts[key].id = key;
-                        contacts.push(myContacts[key]);
+                let fbContacts = results.data;                 
+                    Object.keys(fbContacts).forEach((key) => {
+                        fbContacts[key].id = key;
+                        contacts.push(fbContacts[key]);
                     });
                 resolve(contacts);
             }).catch((err) => {
-                console.log('error in myContacts', err);
+                console.log('error in fbContacts', err);
             });
         });
     };
@@ -22,16 +22,16 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
         let contacts = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
-                let myContacts = results.data;
-                    Object.keys(myContacts).forEach((key) => {
-                        myContacts[key].id = key;
-                        if(myContacts[key].favorite) {
-                        contacts.push(myContacts[key]);
+                let fbContacts = results.data;
+                    Object.keys(fbContacts).forEach((key) => {
+                        fbContacts[key].id = key;
+                        if(fbContacts[key].favorite) {
+                        contacts.push(fbContacts[key]);
                     }
                 });
                 resolve(contacts);
             }).catch((err) => {
-                console.log('error in myContacts', err);
+                console.log('error in fbContacts', err);
             });
         });
     };
@@ -63,7 +63,7 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
 			"twitter": contact.twitter,
 			"facebook_page": contact.facebook_page,
 			"uid": contact.uid,
-            "isFavorite": contact.isFavorite
+            "favorite": contact.favorite
         };
     };
     return {postNewContact, getContacts, deleteContact, updateContact, createContactObj, getFavoriteContacts};
