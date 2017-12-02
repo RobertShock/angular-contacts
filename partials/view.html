@@ -1,22 +1,24 @@
-<div class="text-center" id="viewContacts">
-		<h1>My Contacts</h1>
-	
-	</div>
-	<div id="contacts"></div>
+<div id="view_contacts">
+	<div id='contacts'>
+		<div ng-if="contacts.lengty == 0" class="text-center">
+			<h2>Add some peeps</h2>
+			<button ng-click="routeToNewContact()" class="btn btn-default new-btn">Add New Contact</button>
+		</div>
 		<div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
-			<div class="thumbnail">
-				<button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
-				<button class="btn btn-default faborite-btn" ng-click="toggleFavorite"><i ng-class="{'fa fa-star-o' : !contact.isFavorite, 'fa fa-star' : contact.isFavorite}"></i></button>
-				<button class="btn btn-edefault edit-btn" ng-click="editContact(contact.id)"><i class="fa fa-pencil"></i></button>
-				<button class="btn btn-default detail-btn" ng-click="contactDetail(contact.id)"><i class="fa fa-search"></i></button>				
-				<div class="caption">
-					<h3>{{contact.first_name}} {{contact.last_name}}</h3>
-					<p>{{contact.phone_number}}</p>
-					<p>{{contact.email}}</p>
-					<p>{{contact.company}}</p>
-					<p>{{contact.twitter}}</p>
-					<p>{{contact.facebook_page}}</p>
+			<div class="thumbnail contact">
+				<div class="panel-heading">
+					<button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
+					<button class="btn btn-default faborite-btn" ng-click="toggleFavorite"><i ng-class="{'fa fa-star-o' : !contact.isFavorite, 'fa fa-star' : contact.isFavorite}"></i></button>
+					<button class="btn btn-edefault edit-btn" ng-click="editContact(contact.id)"><i class="fa fa-pencil"></i></button>
+					<button class="btn btn-default detail-btn" ng-click="contactDetail(contact.id)"><i class="fa fa-search"></i></button>				
 				</div>
+				<h2 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h2>
+			</div>
+				<p class='phone'><i class="fa fa-phone" aria-hidden="true"></i> {{contact.phone}} </p>
+				<p class='email'><i class="fa fa-envelope-open-o" aria-hidden="true"></i> {{contact.email}} </p>
+				<p class='company'><i class="fa fa-handshake-o" aria-hidden="true"></i> {{contact.company}}</p>
+				<p class='twitter'><i class="fa fa-twitter" aria-hidden="true"></i> {{contact.twitter}} </p>
+				<p class='facebook'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook}} </p>
 			</div>
 		</div>
 	</div>

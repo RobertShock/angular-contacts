@@ -23,37 +23,26 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, ContactServic
 
 	getContacts();
 
-	$scope.favoriteContact = (contact) => {
-		let updatedContact = {};
-		if (!contact.isFavorite) {
-			updatedContact = ContactService.createContactObject(contact); 
-		} else {
-			updatedContact = ContactService.createContactObject(contact);
-			updatedContact.isFavorite = false;
-		}
-		ContactService.updateContact(updatedContact, contact.id).then((result) => {
+	$scope.changeFav = (contact, contactId) => {
+		contact.favorite = contact.favorite ? false: true;
+		let favContact = ContactService.createContactObject (contact);
+		ContactService.updateContact(favContact, contactId).then(() => {
 			getContacts();
-			console.log("result", result);
 		}).catch((err) => {
-			console.log("error in favoriteContact", err);
+			console.log("error in favContact", err);
 		});
-    };
-
+	};
 	
-
-	$scope.starChange = (event, contact) =>{
-		if(event.favorite){
-			contact.favorite = event.favorite;
-			let updatedContact = ContactService.createContactObject(contact);
-			ContactService.updateContact(updatedContact, contact.id).then(() => {
-				getContacts();
-			}).catch((err) => {
-				console.log("error in updateContact", err);
-			});
-		}
+	$scope.editContact = (contactId) => {
+		$location.path(`/contacts/edit/${contactId}`);
 	};
 
-	$scope.contactDetail = (contactId) => {
-		$location.path(`/contact/${contactId}`);
+	$scope.contactDetail = (contact, contactId) => {
+		$location.path(`/contacts/detail/${contactId}`);
 	};
+	
+	$scope.goToNewContacts = () => {
+		$location.path(`"/contacts/new"`);
+	};
+
 });

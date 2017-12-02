@@ -3,42 +3,44 @@
 app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
     const getContacts = (userUid) => {
         console.log("userUid", userUid);
-        let myContacts = [];
+        let contacts = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
-                let contacts = results.data;
-                if (contacts != null) {
-                    Object.keys(contacts).forEach((key) => {
-                        contacts[key].id = key;
-                        myContacts.push(contacts[key]);
+                let myContacts = results.data;                 
+                    Object.keys(myContacts).forEach((key) => {
+                        myContacts[key].id = key;
+                        contacts.push(myContacts[key]);
                     });
-                }
-                resolve(myContacts);
+                resolve(contacts);
             }).catch((err) => {
-                reject(err);
+                console.log('error in myContacts', err);
             });
         });
     };
 
     const getFavoriteContacts = (userUid) => {
-        let myContacts = [];
+        let contacts = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
-                let contacts = results.data;
-                if (contacts != null) {
-                    Object.keys(contacts).forEach((key) => {
-                        contacts[key].id = key;
-                        myContacts.push(contacts[key]);
-                    });
-                }
-                resolve(myContacts);
+                let myContacts = results.data;
+                    Object.keys(myContacts).forEach((key) => {
+                        myContacts[key].id = key;
+                        if(myContacts[key].favorite) {
+                        contacts.push(myContacts[key]);
+                    }
+                });
+                resolve(contacts);
             }).catch((err) => {
-                reject(err);
+                console.log('error in myContacts', err);
             });
         });
     };
 
-    const addNewContact = (newContact) => {
+    const getSingleContact = (contactId) => {
+        return $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
+    };
+
+    const postNewContact = (newContact) => {
         console.log("newContact", newContact);
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify(newContact));
     };
@@ -47,5 +49,22 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
         return $http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
     };
 
-    return {addNewContact, getContacts, deleteContact};
+    const updateContact = (updatedContact, contactId) => {
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(updatedContact));
+    };
+
+    const createContactObj = (contact) => {
+        return {
+            "first_name": contact.first_name,
+			"last_name": contact.last_name,
+			"phone_number": contact.phone_number,
+            "email": contact.email,
+            "company": contact.company,
+			"twitter": contact.twitter,
+			"facebook_page": contact.facebook_page,
+			"uid": contact.uid,
+            "isFavorite": contact.isFavorite
+        };
+    };
+    return {postNewContact, getContacts, deleteContact, updateContact, createContactObj, getFavoriteContacts};
 });
