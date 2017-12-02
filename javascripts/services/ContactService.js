@@ -23,9 +23,9 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
                 let fbContacts = results.data;
-                    Object.keys(fbContacts).forEach((key) => {
-                        fbContacts[key].id = key;
-                        if(fbContacts[key].favorite) {
+                Object.keys(fbContacts).forEach((key) => {
+                    fbContacts[key].id = key;
+                    if(fbContacts[key].favorite) {
                         contacts.push(fbContacts[key]);
                     }
                 });
@@ -49,8 +49,8 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
         return $http.delete(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
     };
 
-    const updateContact = (updatedContact, contactId) => {
-        return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(updatedContact));
+    const updateContact = (contact, contactId) => {
+        return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
     };
 
     const createContactObj = (contact) => {
@@ -62,7 +62,7 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
             "company": contact.company,
 			"twitter": contact.twitter,
 			"facebook_page": contact.facebook_page,
-			"uid": contact.uid,
+            "uid": contact.uid,
             "favorite": contact.favorite
         };
     };

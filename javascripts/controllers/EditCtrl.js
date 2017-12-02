@@ -7,7 +7,7 @@ app.controller('EditCtrl', function($location, $rootScope, $routeParams, $scope,
     const getContact = () => {
         ContactService.getSingleContact($routeParams.id).then((results) => {
             $scope.contact = results.data;
-        }).catch((error) => {
+        }).catch((err) => {
             console.log('error in getSingleContact', err);
         });
     };
@@ -16,7 +16,7 @@ app.controller('EditCtrl', function($location, $rootScope, $routeParams, $scope,
         contact.uid = $rootScope.uid;
         ContactService.updateContact(contact, $routeParams.id).then(() => {
             $location.path("/contacts/view");
-        }).catch((error) => {
+        }).catch((err) => {
             console.log('error in submitForm', err);
         });
     };
