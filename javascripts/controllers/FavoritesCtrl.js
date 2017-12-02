@@ -23,7 +23,7 @@ app.controller('FavoritesCtrl', function($location, $rootScope, $scope, ContactS
 		console.log("contact.id", contact.id);
 		contact.favorite = contact.favorite ? false: true;
 		let favoriteContact = ContactService.createContactObj (contact);
-		ContactService.updateContact(favoriteContact, contact.id).then(() => {
+		ContactService.updateContact(favoriteContact, contact.id).then((result) => {
 			getContacts();
 		}).catch((err) => {
 			console.log('error in favoriteContact', err);

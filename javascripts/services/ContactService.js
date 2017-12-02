@@ -50,7 +50,7 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
     };
 
     const updateContact = (contact, contactId) => {
-        return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
+          return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
     };
 
     const createContactObj = (contact) => {

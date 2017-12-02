@@ -1,7 +1,7 @@
 <div id="favorite_contact">
     <h2 class="text-center">My Favorite People</h2>
     <div id="contacts">
-        <div ng-repete="contact in contacts" class="col-sm-6 col-md-4 contact">
+        <div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
             <div class="thumbnail">
                 <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
                 <button class="btn btn-info star" ng-click="switchFavorite(contact)"><i ng-class="{'fa fa-star-o' : !contact.favorite, 'fa fa-star' : contact.favorite}"></i></button>
