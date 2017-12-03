@@ -61,7 +61,8 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
 			"twitter": contact.twitter,
 			"facebook_page": contact.facebook_page,
             "uid": contact.uid,
-            "favorite": contact.favorite
+            "favorite": contact.favorite,
+            "relationship": contact.relationship
         };
     };
     return {postNewContact, getContacts, deleteContact, updateContact, createContactObj, getSingleContact, getFavoriteContacts};

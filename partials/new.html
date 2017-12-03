@@ -53,9 +53,21 @@
 			<div class="form-group">
 				<label for="facebook_page" class="col-sm-4 control-label">Facebook</label>
 				<div class="col-sm-8">
-				<input type="text" class="form-control" id="facebook_page" placeholder="facebook" ng-model="newContact.facebook_page" required>
+				<input type="text" class="form-control" id="facebook_page" placeholder="Facebook" ng-model="newContact.facebook_page" required> 
+				</div>
 			</div>
-						
+			
+			<div class="radio"></div>
+				<label class="radioRelation">
+					<input type="radio" name="friendOption" id="friendOption" value="Friend" ng-model="newContact.relationship"> Friend
+				</label>
+				<label>
+					<input type="radio" name="familyOption" id="familyOption" value="Family" ng-model="newContact.relationship"> Family
+				</label>
+				<label>
+					<input type="radio" name="coworkerOption" id="coworkerOption" value="Coworker" ng-model="newContact.relationship"> Coworker
+				</label>
+			</div>				
 		</form>
 	</div>
 </div>
