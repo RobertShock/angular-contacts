@@ -1,9 +1,9 @@
-<div class='tet-center' id='view'>
-	<div class="input-group input-group-lg col-sm-6 col-md-4 searchbar">
+<div class='text-center' id='view'>
+	<h1>My Contacts</h1><br>
+	<div class="input-group input-group-lg col-lg-12 col-md-4 searchbar">
 		<input id="search-bar" type="text" class="form-control" placeholder="Search Contacts" ng-model="searchText">
-		<span class="input-group-btn"><button class="btn btn-default" type="button">Search</button></span>
-	</div>
-
+		<span class="input-group-btn"><button class="btn btn-primary" type="button">Search</button></span>
+	</div><br>
 	<div id="view contacts">
 		<div ng-repeat="contact in contacts | filter: searchText" class="col-sm-6 col-md-4 contact-card">
 			<div class="thumbnail contact">
@@ -14,7 +14,7 @@
 							<button class="btn btn-success edit-btn" ng-click="editContact(contact.id)"><i class="fa fa-pencil"></i></button>
 							<button class="btn btn-info detail-btn" ng-click="contactDetail(contact, contact.id)"><i class="fa fa-search"></i></button>
 							<button class="btn btn-info star" ng-click="switchFavorite(contact)"><i ng-class="{'fa fa-star-o' : !contact.favorite, 'fa fa-star' : contact.favorite}"></i></button>
-						</div>
+						</div><br>
 						<h2 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h2>
 					</div>
 					<div class="panel-body">

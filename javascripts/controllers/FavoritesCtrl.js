@@ -33,6 +33,10 @@ app.controller('FavoritesCtrl', function($location, $rootScope, $scope, ContactS
 	$scope.editContact = (contactId) => {
 		$location.path(`/contacts/edit/${contactId}`);
 	};
+
+	$scope.contactDetail = (contact, contactId) => {
+		$location.path(`/contacts/detail/${contactId}`);
+	};
 	
 	$scope.goToNewContacts = () => {
 		$location.path("/contacts/new");

@@ -24,15 +24,4 @@ console.log("hello");
     };
 
     getContact();
-    
-
-    // $scope.editSubmit = function (contact) {
-    //     let updatedContact = ContactService.createContactObject(contact);
-    //     ContactService.updateContact(updatedContact, $routeParams.id).then(() => {
-    //       getContact();
-    //       $location.path('contacts/view');
-    //     }).catch((error) => {
-    //       console.log("Error in editSubmit", error);
-    //     });
-    // };
 });
