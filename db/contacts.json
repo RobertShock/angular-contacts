@@ -10,7 +10,7 @@
 			"facebook_page": "facebook.com/aapple",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "friend"
+			"relationship": "Friend"
 		},
 		"contact1": {
 			"first_name": "Byron",
@@ -22,7 +22,7 @@
 			"facebook_page": "facebook.com/bbuttz",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "family"
+			"relationship": "Family"
 		},
 		"contact2": {
 			"first_name": "Crusty",
@@ -34,7 +34,7 @@
 			"facebook_page": "facebook.com/ccarle",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "coworker"
+			"relationship": "Coworker"
 		},
 		"contact3": {
 			"first_name": "Dustin",
@@ -46,7 +46,7 @@
 			"facebook_page": "facebook.com/ddawg",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "friend"
+			"relationship": "Friend"
 		},
 		"contact4": {
 			"first_name": "Eagle",
@@ -58,7 +58,7 @@
 			"facebook_page": "facebook.com/eearl",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "family"
+			"relationship": "Family"
 		},
 		"contact5": {
 			"first_name": "Fat",
@@ -70,7 +70,7 @@
 			"facebook_page": "facebook.com/ffransisco",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "coworker"
+			"relationship": "Coworker"
 		},
 		"contact6": {
 			"first_name": "Gina",
@@ -82,7 +82,7 @@
 			"facebook_page": "facebook.com/ggreasy",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "friend"
+			"relationship": "Friend"
 		},
 		"contact7": {
 			"first_name": "Hanna",
@@ -94,7 +94,7 @@
 			"facebook_page": "facebook.com/hhawk",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "family"
+			"relationship": "Family"
 		},
 		"contact8": {
 			"first_name": "Iron",
@@ -106,7 +106,7 @@
 			"facebook_page": "facebook.com/iike",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "coworker"
+			"relationship": "Coworker"
 		},
 		"contact9": {
 			"first_name": "Jake",
@@ -118,7 +118,7 @@
 			"facebook_page": "facebook.com/jjetson",
 			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
 			"favorite": false,
-			"relationship": "friend"
+			"relationship": "Friend"
 		}
 
 	}

@@ -1,4 +1,5 @@
 <div class='text-center' id='view_contacts'>
+    <h1>Contact Details</h1><br>
     <div class="container col-sm-6 col-md-4 contact">
         <div class="thumbnail contact">
             <div class="caption">
@@ -6,18 +7,16 @@
                     <div class="icon_position">
                         <button class="btn btn-info star" ng-click="switchFavorite(contact)"><i ng-class="{'fa fa-star-o' : !contact.favorite, 'fa fa-star' : contact.favorite}"></i></button>
                     </div><br>
-
                     <div>
-                    <h2 class="panel-title"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{contact.first_name}} {{contact.last_name}}</h2>
-                    </div>
-                    
+                        <h2 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h2>
+                        </div>
                     <div class="panel-body">
                         <p class='phone'><i class="fa fa-phone" aria-hidden="true"></i> {{contact.phone_number}} </p>
                         <p class='email'><i class="fa fa-envelope-open-o" aria-hidden="true"></i> {{contact.email}} </p>
                         <p class='company'><i class="fa fa-handshake-o" aria-hidden="true"></i> {{contact.company}}</p>
                         <p class='twitter'><i class="fa fa-twitter" aria-hidden="true"></i> {{contact.twitter}} </p>
-                        <p class='facebook'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook_page}} </p>
-                        <p class='relationship'><i class="fa fa-filter" aria-hidden="true"></i>{{contact.relationship}} </p>
+                        <p class='facebook_page'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook_page}} </p>
+                        <p class='relationship'><i class="fa fa-fa-meh-o" aria-hidden="true"></i>{{contact.relationship}} </p>
                     </div>
                 </div>
             </div>
