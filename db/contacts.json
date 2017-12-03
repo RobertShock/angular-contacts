@@ -8,7 +8,8 @@
             "company": "AAA Apples And More",
 			"twitter": "@AApple",
 			"facebook_page": "facebook.com/aapple",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact1": {
 			"first_name": "Byron",
@@ -18,7 +19,8 @@
             "company": "Big Byron Buttz",
 			"twitter": "@BButtz",
 			"facebook_page": "facebook.com/bbuttz",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact2": {
 			"first_name": "Crusty",
@@ -28,7 +30,8 @@
             "company": "Crusty Carls Cakes",
 			"twitter": "@CCarl",
 			"facebook_page": "facebook.com/ccarle",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact3": {
 			"first_name": "Dustin",
@@ -38,7 +41,8 @@
             "company": "Dustin Dawgz",
 			"twitter": "@DDawg",
 			"facebook_page": "facebook.com/ddawg",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact4": {
 			"first_name": "Eagle",
@@ -48,7 +52,8 @@
             "company": "Eagle Earl Eggs",
 			"twitter": "@EEarl",
 			"facebook_page": "facebook.com/eearl",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact5": {
 			"first_name": "Fat",
@@ -58,7 +63,8 @@
             "company": "Fat Frankies Fritters",
 			"twitter": "@FFransisco",
 			"facebook_page": "facebook.com/ffransisco",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact6": {
 			"first_name": "Gina",
@@ -68,7 +74,8 @@
             "company": "Greasy Ginas Gumballs",
 			"twitter": "@GGreasy",
 			"facebook_page": "facebook.com/ggreasy",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact7": {
 			"first_name": "Hanna",
@@ -78,7 +85,8 @@
             "company": "Hot Hairy Hanna",
 			"twitter": "@HHawk",
 			"facebook_page": "facebook.com/hhawk",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact8": {
 			"first_name": "Iron",
@@ -88,7 +96,8 @@
             "company": "Iron Ike Injections",
 			"twitter": "@IIKe",
 			"facebook_page": "facebook.com/iike",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		},
 		"contact9": {
 			"first_name": "Jake",
@@ -98,7 +107,8 @@
             "company": "Jake Jetson Jetpacks",
 			"twitter": "@JJetson",
 			"facebook_page": "facebook.com/jjetson",
-			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63"
+			"uid": "DF1yWu46UpfCgbaoAVmjsT8iAR63",
+			"favorite": false
 		}
 
 	}

@@ -1,4 +1,26 @@
-<div class="text-center" id="favorites">
-	<h1>Favorites</h1>
-	{{controller}}
+<div class='text-center' id='view'>
+    <h1>My Favorite People</h1><br>    
+    <div id="favorite contacts">
+        <div ng-repeat="contact in contacts | filter: searchText" class="col-sm-6 col-md-4 contact-card">
+            <div class="thumbnail contact">
+                <div class="caption">
+                    <div class="pannel-heading">
+                        <div class="icon_positioning">
+                            <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-success edit-btn" ng-click="editContact(contact.id)"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-info detail-btn" ng-click="contactDetail(contact, contact.id)"><i class="fa fa-search"></i></button>
+                            <button class="btn btn-info star" ng-click="switchFavorite(contact)"><i ng-class="{'fa fa-star-o' : !contact.favorite, 'fa fa-star' : contact.favorite}"></i></button>
+                        </div><br>
+                    <h2 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h2>
+                    </div>
+                <div class="panel-body">
+                    <p class='phone'><i class="fa fa-phone" aria-hidden="true"></i> {{contact.phone_number}} </p>
+                    <p class='email'><i class="fa fa-envelope-open-o" aria-hidden="true"></i> {{contact.email}} </p>
+                    <p class='company'><i class="fa fa-handshake-o" aria-hidden="true"></i> {{contact.company}}</p>
+                    <p class='twitter'><i class="fa fa-twitter" aria-hidden="true"></i> {{contact.twitter}} </p>
+                    <p class='facebook'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook_page}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
