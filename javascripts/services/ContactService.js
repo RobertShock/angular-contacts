@@ -2,7 +2,6 @@
 
 app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
     const getContacts = (userUid) => {
-        console.log("userUid", userUid);
         let contacts = [];
         return $q((resolve, reject) => {
             $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
@@ -37,12 +36,10 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
     };
 
     const getSingleContact = (contactId) => {
-        console.log("contactId", contactId);
         return $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
     };
 
     const postNewContact = (newContact) => {
-        console.log("newContact", newContact);
         return $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify(newContact));
     };
 
@@ -51,7 +48,6 @@ app.service("ContactService", function($http, $q, $rootScope, FIREBASE_CONFIG) {
     };
 
     const updateContact = (contact, contactId) => {
-        console.log(contact, contactId);
           return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
     };
 

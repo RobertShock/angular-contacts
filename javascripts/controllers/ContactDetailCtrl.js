@@ -6,7 +6,6 @@ app.controller('ContactDetailCtrl', function($location, $routeParams, $scope, Co
 
 	const getContacts = () => {
 		ContactService.getSingleContact($routeParams.id).then((results) => {
-			console.log("results", results);
 			$scope.contact = results.data;
 		}).catch((err) => {
 			console.log('error in getSingleContact', err);
@@ -14,7 +13,6 @@ app.controller('ContactDetailCtrl', function($location, $routeParams, $scope, Co
 	};
 
 	$scope.switchFavorite = (contact) => {
-		console.log("contact.id", contact.id);
 		contact.favorite = contact.favorite ? false: true;
 		let favoriteContact = ContactService.createContactObj (contact);
 		ContactService.updateContact(favoriteContact, contact.id).then((result) => {

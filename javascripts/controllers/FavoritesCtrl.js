@@ -42,7 +42,6 @@ app.controller('FavoritesCtrl', function($location, $rootScope, $scope, ContactS
 		$location.path("/contacts/new");
 	};
 
-
 	getContacts();
 	
 });
