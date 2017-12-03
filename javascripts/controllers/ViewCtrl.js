@@ -20,20 +20,6 @@ app.controller("ViewCtrl", function($location, $rootScope, $scope, ContactServic
 		});
 	};
 
-	getContacts();
-
-	// $scope.switchContact = (contact) => {
-	// 	contact.favorite = true;
-	// 	let updatedContact = ContactService.createContactObj (contact);
-	// 	console.lob("contact.id", contact.id)
-	// 	ContactService.updateContact(updatedContact, contact.id).then((result) => {
-	// 		getContacts();
-	// 		console.log("result", result);
-	// 	}).catch((err) => {
-	// 		console.log("error in updateContact", err);
-	// 	});
-	// };
-
 	$scope.switchFavorite = (contact) => {
 		contact.favorite = contact.favorite ? false: true;
 		let favoriteContact = ContactService.createContactObj (contact);

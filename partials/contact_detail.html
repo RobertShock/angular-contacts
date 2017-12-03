@@ -3,19 +3,20 @@
         <div class="thumbnail contact">
             <div class="caption">
                 <div class="panel panel_margin_fix panel-info"></div>
-                <div class="panel-heading">
-                    <div class="icon_position">
-                        <a ng-click="changeFav(contact, contact.id)"><i id="star" ng-class="{'fa fa-star-o': !contact.favorite, 'fa fa-star': contact.fabvorite}" aria-hidden="true"></i></a>
-                        <a ng-click="editContact(contact.id")><i id="pencil" class="fa fa-pencil" aria-hidden="true"></i></a>
-                        <a ng-click="deleteContact(contact.id")><i id="trash" class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <div class="panel-heading">
+                        <div class="icon_position">
+                            <button class="btn btn-info star" ng-click="switchFavorite(contact)"><i ng-class="{'fa fa-star-o' : !contact.favorite, 'fa fa-star' : contact.favorite}"></i></button>                        </div>
+                    <div>
+                        <h2 class="panel-title"><i class="fa fa-address-card-o" aria-hidden="true"></i> {{contact.first_name}} {{contact.last_name}}</h2>
+					</div>
+						<div class="panel-body">
+							<p class='phone'><i class="fa fa-phone" aria-hidden="true"></i> {{contact.phone_number}} </p>
+							<p class='email'><i class="fa fa-envelope-open-o" aria-hidden="true"></i> {{contact.email}} </p>
+							<p class='company'><i class="fa fa-handshake-o" aria-hidden="true"></i> {{contact.company}}</p>
+							<p class='twitter'><i class="fa fa-twitter" aria-hidden="true"></i> {{contact.twitter}} </p>
+                            <p class='facebook'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook_page}} </p>
+                        </div>
                     </div>
-                    <h2 class="panel-title">{{contact.name_first}} {{contact.name_last}} </h2>
-                    <h3><i class="fa fa-address-card-o" aria-hidden="true"></i> Contact Info </h3>
-                    <p class='phone'><i class="fa fa-phone" aria-hidden="true"></i> {{contact.phone_number}} </p>
-                    <p class='email'><i class="fa fa-envelope-open-o" aria-hidden="true"></i> {{contact.email}} </p>
-                    <p class='company'><i class="fa fa-handshake-o" aria-hidden="true"></i> {{contact.company}}</p>
-                    <p class='twitter'><i class="fa fa-twitter" aria-hidden="true"></i> {{contact.twitter}} </p>
-                    <p class='facebook'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook_page}} </p>
                 </div>
             </div>
         </div>

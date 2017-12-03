@@ -1,5 +1,51 @@
-<div id="favorite_contact">
-    <h2 class="text-center">My Favorite People</h2>
+<div id="contact">
+    <h2 ng-if="contacts.length > 0" class="contacts_heading">My Favorite People</h2>
+    <div class="container search_container">
+        <form action="" class="search-form fix_search_width">
+            <div class="form-group has-feedback">
+                <label for="search" class="sr-only">Search</label>
+                <input type="text" class="form-control" name="search" id="search" placeholder="search favorites" ng-modle="searchText">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+            </div>
+        </form>
+    </div>
+    <div id="favorite_contacts">
+        <div ng-if="contacts.length == 0">
+            <div class="text-center">
+                <h2>Add People To Favorites</h2>
+                <button ng-click="routeToNewContact()" class="btn btn-default new-btn">Add New Contact</button>
+            </div>
+        </div>
+        <div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
+            <div class="thumbnail contact">
+                <div class="caption">
+                    <div class="pannel-heading">
+                        <div class="icon_positioning">
+                            <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
+                            <button class="btn btn-success edit-btn" ng-click="editContact(contact.id)"><i class="fa fa-pencil"></i></button>
+                            <button class="btn btn-info detail-btn" ng-click="contactDetail(contact.id)"><i class="fa fa-search"></i></button>
+                        </div>
+                        <h2 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h2>
+                    </div>
+                    <div class="panel-body">
+                        <p class='phone'><i class="fa fa-phone" aria-hidden="true"></i> {{contact.phone_number}} </p>
+                        <p class='email'><i class="fa fa-envelope-open-o" aria-hidden="true"></i> {{contact.email}} </p>
+                        <p class='company'><i class="fa fa-handshake-o" aria-hidden="true"></i> {{contact.company}}</p>
+                        <p class='twitter'><i class="fa fa-twitter" aria-hidden="true"></i> {{contact.twitter}} </p>
+                        <p class='facebook'><i class="fa fa-facebook" aria-hidden="true"></i> {{contact.facebook_page}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- <h2 class="text-center">My Favorite People</h2>
     <div id="contacts">
         <div ng-repeat="contact in contacts" class="col-sm-6 col-md-4 contact">
             <div class="thumbnail">
@@ -9,12 +55,7 @@
                 <button class="btn btn-info detail" ng-click="contactDetail(contact.id)"><i class="fa fa-user-circle-o"></i></button>				
             <div class="caption">
                 <h3>{{contact.first_name}} {{contact.last_name}}</h3>
-                <!-- <p>{{contact.phone_number}}</p>
-                <p>{{contact.email}}</p>
-                <p>{{contact.company}}</p>
-                <p>{{contact.twitter}}</p>
-                <p>{{contact.facebook_page}}</p> -->
             </div>
         </div>
     </div>
-</div>
+</div> -->
