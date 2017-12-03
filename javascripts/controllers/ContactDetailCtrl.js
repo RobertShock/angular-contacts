@@ -12,14 +12,6 @@ app.controller('ContactDetailCtrl', function($location, $routeParams, $scope, Co
    		});	
 	};
 
-	// const getContact = () => {
-    //     ContactService.getSingleContact($routeParams.id).then((results) => {
-    //         $scope.contact = results.data;
-    //     }).catch((err) => {
-    //         console.log('error in getContact', err);
-    //     });
-    // };
-
 	$scope.switchFavorite = (contact) => {
 		contact.favorite = contact.favorite ? false: true;
 		let favoriteContact = ContactService.createContactObj (contact);
