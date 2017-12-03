@@ -14,4 +14,5 @@ app.controller("NewCtrl", function($location, $rootScope, $scope, ContactService
 			console.log("error in postNewContact", error);
 		});
 	};
+
 });
