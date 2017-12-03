@@ -1,19 +1,19 @@
 'use strict';
 
-app.controller('EditCtrl', function($location, $rootScope, $routeParams, $scope, ContactService) {
+app.controller("EditCtrl", function($location, $rootScope, $routeParams, $scope, ContactService) {
 console.log("hello");
-    $scope.newContact = {};
+    $scope.contact = {};
     
     const getContact = () => {
         ContactService.getSingleContact($routeParams.id).then((results) => {
-            $scope.newContact = results.data;
-            console.log("$scope.newContact", $scope.newContact);
+            $scope.contact = results.data;
+            console.log("$scope.contact", $scope.contact);
         }).catch((err) => {
-            console.log('error in getSingleContact', err);
+            console.log('error in getContact', err);
         });
     };
 
-    $scope.submitForm = (contact) => {
+    $scope.editSubmit = (contact) => {
         contact.uid = $rootScope.uid;
         console.log("contact", contact);
         ContactService.updateContact(contact, $routeParams.id).then(() => {
@@ -25,4 +25,14 @@ console.log("hello");
 
     getContact();
     
+
+    // $scope.editSubmit = function (contact) {
+    //     let updatedContact = ContactService.createContactObject(contact);
+    //     ContactService.updateContact(updatedContact, $routeParams.id).then(() => {
+    //       getContact();
+    //       $location.path('contacts/view');
+    //     }).catch((error) => {
+    //       console.log("Error in editSubmit", error);
+    //     });
+    // };
 });

@@ -1,4 +1,4 @@
-<div id="contact">
+<div id="favorite_contact">
     <h2 ng-if="contacts.length > 0" class="contacts_heading">My Favorite People</h2>
     <div class="container search_container">
         <form action="" class="search-form fix_search_width">
@@ -21,9 +21,7 @@
                 <div class="caption">
                     <div class="pannel-heading">
                         <div class="icon_positioning">
-                            <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o"></i></button>
-                            <button class="btn btn-success edit-btn" ng-click="editContact(contact.id)"><i class="fa fa-pencil"></i></button>
-                            <button class="btn btn-info detail-btn" ng-click="contactDetail(contact.id)"><i class="fa fa-search"></i></button>
+                            <button class="btn btn-info star" ng-click="switchFavorite(contact)"><i ng-class="{'fa fa-star-o' : !contact.favorite, 'fa fa-star' : contact.favorite}"></i></button>    
                         </div>
                         <h2 class="panel-title">{{contact.first_name}} {{contact.last_name}}</h2>
                     </div>
